@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&family=Rye&display=swap');
+@import "tailwindcss";
+
+@plugin "daisyui";
+
+@theme {
+  --font-rye: "Rye", serif;
+  --font-red-hat: "Red Hat Text", sans-serif;
+  --color-primary: #22A2E3;
+  --color-highlight-blue: #56F1FF;
+}
+
+@layer base {
+  body{
+    @apply bg-black text-white font-red-hat box-border m-0 p-0;
+  }
+
+  .icon{
+    @apply w-full h-full text-black;
+  }
+}
+
+@layer components{
+  
+}
