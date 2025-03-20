@@ -23,13 +23,14 @@ const Navbar = () => {
 
   const navItems = [
     { label: 'Home', href: '#Home' },
+    { label: 'Compendium', href: '#Compendium' },
     { label: 'Favorite', href: '#' },
     { label: 'Portfolio', href: '#' },
     { label: 'Github', href: 'https://github.com/NguyenCatNguyen/ZeldaWIki' },
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 p-8">
+    <header className="absolute top-0 left-0 right-0 z-50 p-8">
       <div className="relative">
         {/* Toggle Button */}
         <button

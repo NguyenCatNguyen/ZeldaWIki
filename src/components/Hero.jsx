@@ -1,11 +1,11 @@
 
-import React, { useState, useRef } from 'react';
-import Button from './Button.jsx';
-import gsap from 'gsap';
+import React from 'react'
 
 const Hero = () => {
   return (
-    <div>Hero</div>
+    <div className='w-screen h-screen bg-red-100'>
+      <h1 className=''>Hero</h1>
+    </div>
   )
 }
 
