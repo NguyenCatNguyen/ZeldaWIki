@@ -31,12 +31,15 @@ const Navbar = () => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-30 p-8">
+      {/* Toggle Button */}
       <div className="relative">
-        {/* Toggle Button */}
         <button
           ref={buttonRef}
           onClick={() => setIsOpen(!isOpen)}
-          className={`w-10 h-10 rounded-full border-0 cursor-pointer absolute right-0 top-[-18px] m-5 z-20 transition-all ease-in-out
+          className={`rounded-full border-0 cursor-pointer absolute 
+                      sm:right-0 sm:top-0 top-[-30px] right-[-30px] 
+                      sm:size-10 size-6
+                      m-5 z-20 transition-all ease-in-out
           ${isOpen ? 'bg-black scale-100 duration-200' : 'bg-[#56F1FF] scale-100 hover:scale-110 duration-2000'}`}/>
 
         {/* Navigation Menu */}
@@ -50,14 +53,14 @@ const Navbar = () => {
           `}
           style={{
             clipPath: isOpen 
-              ? 'circle(150% at calc(100% - 55px) 47px)' 
+              ? 'circle(150% at calc(100% - 55px) 47px) ' 
               : 'circle(0% at calc(100% - 55px) 47px)',
             transitionDuration: `${animationDuration}ms`
           }}
         >
           <ul className=" w-full text-center">
             {navItems.map((item, index) => (
-              <li key={index} className="text-6xl leading-tight py-4 uppercase ">
+              <li key={index} className="md:text-6xl text-4xl leading-tight py-4 uppercase ">
                 <a 
                   href={item.href}
                   className="text-black no-underline hover:font-bold transition-all duration-300 ease-in-out"

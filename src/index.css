@@ -21,7 +21,7 @@
 
   h2{
     @apply font-bold;
-    font-size: clamp(1rem, 3vw, 2.5rem)
+    font-size: clamp(1rem, 3vw, 2rem)
   }
 }
 
