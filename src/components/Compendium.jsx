@@ -3,6 +3,7 @@ import { FaSearch } from 'react-icons/fa';
 import { useQuery } from '@tanstack/react-query';
 import Card from './Card';
 import Pagination from './Pagination';
+import Modal from './Modal';
 
 
 const Compendium = () => {
@@ -10,6 +11,10 @@ const Compendium = () => {
   const [categories, setCategories] = useState(""); // Categories button
   const [currentPage, setCurrentPage] = useState(1); // Set current page for pagination
   const itemsPerPage = 30; // Number of items per page
+
+  const [isModalOpen, setIsModalOpen] = useState(false); // Modal state
+  const [selectEntry, setSelectEntry] = useState({}); // Entry state for modal
+
   
 
   const searchRef = useRef(null); // searchRef
@@ -31,8 +36,11 @@ const Compendium = () => {
   
   //Test case for categories
   const handleCategory = (category) => {
-    setCategories(category);
-    console.log(categories);
+    if (categories === category) {
+      setCategories(""); // If the category is already selected, deselect it
+    } else {
+      setCategories(category); // Set the selected category
+    }
   }
   
   // Fetch data from API
@@ -58,7 +66,7 @@ const Compendium = () => {
       // Turn the search term into lowercase
       const matchesSearch = item.name.toLowerCase().includes(searchTerm.toLowerCase());
 
-      const matchesCategory = ! categories || item.category === categories.toUpperCase();
+      const matchesCategory = ! categories || item.category.toLowerCase() === categories.toLowerCase();
       return matchesSearch && matchesCategory;
     })
   }, [data, searchTerm, categories]); // Re-run when data, searchTerm, or categories change
@@ -81,11 +89,23 @@ const Compendium = () => {
       setSearchTerm(searchRef.current.value);
     }
   }
+
+  // MODAL HANDLE
+  const onClose = () => {
+    setIsModalOpen(false);
+  }
+
+  const handleModalOpen = (item) => {
+    setSelectEntry(item); // Store the selected entry
+    setIsModalOpen(true); // Open the modal
+  }
+
+
   
 
   return (
     <div className="w-screen h-screen px-10 relative" id='Compendium' ref={compendiumRef}>
-      
+      <Modal onClose={onClose} isOpen={isModalOpen} entry={selectEntry} />
       <h1 className="">Compendium</h1>
       <div id="search" className="sm:px-10 px-0">
         <div id="searchBar" className="rounded-lg border-2 border-blue max-w-4xl max-h-[64px] flex p-1 mx-auto">
@@ -117,17 +137,28 @@ const Compendium = () => {
 
       </div>
       <h2 className="py-3">
-        {categories ? `${categories}` : 'All Categories'}
+        {categories ? `${categories}` : 'All entries'}
         {searchTerm && ` matching "${searchTerm}"`}
       </h2>
 
       {/* Loading and Error handling */}
-      { paginatedData.length === 0 && (<p className='text-center text-2xl mt-3'>Search don't match any document</p>)}
+      { paginatedData.length === 0 && (
+        <>
+          <p className='text-center sm:text-2xl text-xs mt-15'>404 Results Not Found... Just kidding!  <br/> But really, try another search.</p>
+          <img src="/404.png" alt="" className='mx-auto sm:w-xs w-[150px]' />
+        </>
+        
+        )}
       
       {/* Card component */}
-      <div className="flex justify-center items-center flex-wrap p-1 mx-10">
+      <div className="flex justify-center items-center flex-wrap p-1 mx-4 sm:mx-10">
         {paginatedData.map(item => (
-          <Card key={item.id} name={item.name} imgURL={item.image} id={item.id} />
+          <Card 
+                id={item.id} 
+                key={item.id} 
+                name={item.name} 
+                imgURL={item.image}
+                CardOpen={()=> handleModalOpen(item)} />
         ))}
       </div>
       

@@ -4,14 +4,14 @@ const Card = ({name, id, imgURL, CardOpen}) => {
   return (
     <div key={id}
     onClick={CardOpen}
-        className='m-4 
+        className='m-4 w-[300px]
         relative hover:translate-y-[-8px] duration-500 ease-in-out cursor-pointer
         border-2 border-blue-300 rounded-lg 
         transition-all brightness-95 hover:brightness-115'>
-        <figure className='size-50 overflow-hidden rounded-t-md '>
-            <img src={imgURL} alt={name} className='w-full h-full object-cover brightness-90'></img>
+        <div className='font-rye pt-3 px-3 uppercase text-center text-[15px] text-[#FADA7A] '>{name}</div>
+        <figure className='overflow-hidden p-5 '>
+            <img src={imgURL} alt={name} className='w-full h-full object-cover brightness-90 rounded'></img>
         </figure>
-        <div className='font-rye p-2 uppercase text-[12px] text-[#FADA7A] '>{name}</div>
     </div>
   )
 }

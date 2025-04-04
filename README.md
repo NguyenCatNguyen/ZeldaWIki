@@ -1,4 +1,21 @@
 
+
+### Tailwind CSS
+
+#### Custom scrollbar area
+- `overflow-y-scroll`: This class enables vertical scrolling on the element.
+- `scrollbar-thin`: This class applies a thin scrollbar style to the element.
+- `scrollbar-thumb-gray-500`: This class sets the color of the scrollbar thumb (the draggable part of the scrollbar) to a gray shade.
+- `scrollbar-track-gray-200`: This class sets the color of the scrollbar track (the area where the thumb moves) to a light gray shade.
+```jsx
+<div className="overflow-y-scroll scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-200">
+   <p>item</p>
+   <p>item</p>
+   <p>item</p>
+   <p>item</p>
+</div>
+```
+
 ### 🌸 🌸 API Function using React Query 🌸 🌸
 - `React Query` (also known as TanStack Query): is a library that provides hooks and utilities for managing, caching, and syncing asynchronous and remote data in React applications.
 

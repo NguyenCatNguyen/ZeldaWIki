@@ -15,11 +15,21 @@ const Button = ({icon, onClick, disabled = false}) => {
 }
 
 const Pagination = ({currentPage, totalPages, onPageChange}) => {
+
+  //Set limits for pages numbers to not exceed and not go below 1
+  const goPrev = () => currentPage > 1 && onPageChange(currentPage - 1);
+  const goNext = () => currentPage < totalPages && onPageChange(currentPage + 1);
+
+  const handlePageChange = (page) => {
+    if (page < 1 || page > totalPages) return;
+    onPageChange(page);
+  }
+
   return (
     <div className='flex justify-center items-center w-full pb-5'>          
-      <Button icon={<BiSolidLeftArrow/>} onClick={() => onPageChange(currentPage - 1)}/>
+      <Button icon={<BiSolidLeftArrow/>} onClick={goPrev} disabled={currentPage <= 1}/>
       <span className="px-5 py-1 mx-2 rounded">{currentPage} / {totalPages}</span>
-      <Button icon={<BiSolidRightArrow/>} onClick={() => onPageChange(currentPage + 1)}/>
+      <Button icon={<BiSolidRightArrow/>} onClick={goNext} disabled={currentPage >= totalPages}/>
     </div>
   )
 }
