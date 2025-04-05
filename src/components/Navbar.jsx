@@ -53,7 +53,7 @@ const Navbar = () => {
           `}
           style={{
             clipPath: isOpen 
-              ? 'circle(150% at calc(100% - 55px) 47px) ' 
+              ? 'circle(150% at calc(100% - 55px) 47px)' 
               : 'circle(0% at calc(100% - 55px) 47px)',
             transitionDuration: `${animationDuration}ms`
           }}

@@ -93,11 +93,13 @@ const Compendium = () => {
   // MODAL HANDLE
   const onClose = () => {
     setIsModalOpen(false);
+    document.body.classList.remove('body-scroll-lock');
   }
 
   const handleModalOpen = (item) => {
     setSelectEntry(item); // Store the selected entry
     setIsModalOpen(true); // Open the modal
+    document.body.classList.add('body-scroll-lock');
   }
 
 

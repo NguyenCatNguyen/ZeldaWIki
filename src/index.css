@@ -26,4 +26,7 @@
 }
 
 @layer components {
+  .body-scroll-lock{
+    @apply overflow-hidden w-screen
+  }
 }
