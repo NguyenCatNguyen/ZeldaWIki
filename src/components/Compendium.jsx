@@ -48,7 +48,10 @@ const Compendium = () => {
     const response = await fetch('https://botw-compendium.herokuapp.com/api/v3/compendium/all');
     if (!response.ok) throw new Error("API fetch failed");
     const res = await response.json();
-    return res.data;
+    const data = res.data;
+    // Sort the data by name
+    data.sort((a, b) => a.name.localeCompare(b.name));
+    return data;
   }
   
   // Use React Query hook directly in the component
@@ -106,7 +109,7 @@ const Compendium = () => {
   
 
   return (
-    <div className="w-screen h-screen px-10 relative" id='Compendium' ref={compendiumRef}>
+    <div className="w-screen  px-10 relative" id='Compendium' ref={compendiumRef}>
       <Modal onClose={onClose} isOpen={isModalOpen} entry={selectEntry} />
       <h1 className="">Compendium</h1>
       <div id="search" className="sm:px-10 px-0">

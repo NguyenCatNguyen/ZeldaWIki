@@ -24,7 +24,7 @@ const Navbar = () => {
   const navItems = [
     { label: 'Home', href: '#Home' },
     { label: 'Compendium', href: '#Compendium' },
-    { label: 'Favorite', href: '#' },
+    { label: 'Favorite', href: '#Favorite' },
     { label: 'Portfolio', href: '#' },
     { label: 'Github', href: 'https://github.com/NguyenCatNguyen/ZeldaWIki' },
   ];

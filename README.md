@@ -14,6 +14,12 @@
          - 404 display
          - Modal component
       3. Create functions to handle data sorting 
+      4. Favorite section
+         - Create a favorite section to store the user's favorite items
+         - Use local storage to persist the data
+         - Create a function (button) to handle adding and removing items from favorites  
+         - Button to clear all favorites
+         - In the Modal component add a button to add the item to favorites list 
 
 ### II. 🌸 Tailwind CSS 🌸 
   #### Custom scrollbar area
