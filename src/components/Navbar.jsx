@@ -1,7 +1,7 @@
 // Navbar.jsx
 import React, { useState, useRef, useEffect } from 'react';
 
-const Navbar = () => {
+const Navbar = ({onNavClick}) => {
   const [isOpen, setIsOpen] = useState(false);
   const navRef = useRef(null);
   const buttonRef = useRef(null);
@@ -28,6 +28,13 @@ const Navbar = () => {
     { label: 'Portfolio', href: '#' },
     { label: 'Github', href: 'https://github.com/NguyenCatNguyen/ZeldaWIki' },
   ];
+
+  // Handle item click
+  const handleItemClick = (section) => {
+    onNavClick(section);
+    setIsOpen(false);
+  }
+
 
   return (
     <header className="fixed top-0 left-0 right-0 z-30 p-8">
@@ -64,7 +71,7 @@ const Navbar = () => {
                 <a 
                   href={item.href}
                   className="text-black no-underline hover:font-bold transition-all duration-300 ease-in-out"
-                  onClick={() => setIsOpen(false)}
+                  onClick={() => handleItemClick(item.label)}
                 >{item.label}</a>
               </li>
             ))}

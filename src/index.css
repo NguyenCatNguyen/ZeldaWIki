@@ -6,7 +6,7 @@
   --font-rye: "Rye", serif;
   --font-red-hat: "Red Hat Text", sans-serif;
   --color-primary: #22A2E3;
-  --color-highlight-blue: #56F1FF;
+  --color-gold: #FADA7A;
 }
 
 @layer base {
@@ -15,7 +15,7 @@
   }
 
   h1{
-    @apply font-bold text-center py-7 font-rye text-[#FADA7A] ;
+    @apply font-bold text-center py-7 font-rye text-gold ;
     font-size: clamp(1.5rem, 5vw, 5rem);
   }
 

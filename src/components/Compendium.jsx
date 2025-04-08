@@ -109,7 +109,7 @@ const Compendium = () => {
   
 
   return (
-    <div className="w-screen  px-10 relative" id='Compendium' ref={compendiumRef}>
+    <div className="w-screen min-h-screen px-10 relative" id='Compendium' ref={compendiumRef}>
       <Modal onClose={onClose} isOpen={isModalOpen} entry={selectEntry} />
       <h1 className="">Compendium</h1>
       <div id="search" className="sm:px-10 px-0">

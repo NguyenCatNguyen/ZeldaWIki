@@ -17,7 +17,7 @@ const Data = ({name, description}) => {
 
 }
 
-const Modal = ({isOpen, onClose, entry}) => {
+const Modal = ({isOpen, onClose, entry, heart}) => {
   if (!isOpen) return null;
 
   const renderArrayData = (data) => {
@@ -54,6 +54,7 @@ const Modal = ({isOpen, onClose, entry}) => {
                         max-w-[500px] sm:max-h-[90vh] h-full flex-1 '>
        
         <button onClick={onClose} className='absolute right-5 top-5 cursor-pointer'><IoCloseSharp className='size-8 hover:text-red-600 transition-colors duration-400' /></button>
+       
        
        <button className='absolute right-5 bottom-5 cursor-pointer'
                onClick={toggleFavorite}>
