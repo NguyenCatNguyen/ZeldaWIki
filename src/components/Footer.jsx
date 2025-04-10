@@ -1,13 +1,8 @@
 import React from 'react'
+import {navItems} from './index.js'
 
 
-const navItems = [
-  { label: 'Home', href: '#Home' },
-  { label: 'API', href: 'https://gadhagod.github.io/Hyrule-Compendium-API/#/compendium-api'},
-  { label: 'Portfolio', href: '#' },
-  { label: 'Github', href: 'https://github.com/NguyenCatNguyen/ZeldaWIki' },
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/cat-nguyen-626621235/' },
-];
+
 
 
 const Footer = () => {
@@ -17,7 +12,7 @@ const Footer = () => {
         {navItems.map((item, i) => (
           <a className='cursor-pointer text-2xl border-b-1 pt-5 pl-2 
                       hover:text-white duration-400 transition-color 
-                       sm:border-none sm:pl-0' href={item.href} key={i}>{item.label}</a>
+                       sm:border-none sm:pl-0' target='_blank' href={item.href} key={i}>{item.label}</a>
         ))}
       </div>
       <div>
