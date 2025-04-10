@@ -12,7 +12,7 @@ const navItems = [
 
 const Footer = () => {
   return (
-    <div className='bg-[#161616] w-full flex flex-col sm:flex-row justify-around items-center py-5'>
+    <div className=' w-full flex flex-col sm:flex-row justify-around items-center py-5'>
       <div className='text-gold font-rye text-3xl'>CN</div>
       <div className='py-5'>
         {navItems.map((item, i) => (

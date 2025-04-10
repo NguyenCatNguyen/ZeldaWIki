@@ -4,6 +4,7 @@ import Navbar from './components/Navbar.jsx';
 import Compendium from './components/Compendium.jsx';
 import Favorite from './components/Favorite.jsx';
 import Footer from './components/Footer.jsx';
+import Action from './components/Action.jsx';
 
 const App = () => {
   // State to track which section is active (default: compendium)
@@ -27,6 +28,7 @@ const App = () => {
       {/* Only show Favorite when active */}
       {activeSection === 'Favorite' && <Favorite />}
       
+      <Action/>
       <Footer/>
     </div>
   );
