@@ -1,25 +1,55 @@
-### I. 🌸 ZeldaWiki section 🌸
-  #### Compendium section
-  - This is the most important section in the website.
-    ##### Task list
-      1. Setup API to fetch data:
-         - Fetch data from the API
-         - Use React Query to manage the data
-         - Handle sorting and filtering locally  
-      2. Create CSS for:
-         - Search bar
-         - Filter icon
-         - Card component
-         - Card hover effect
-         - 404 display
-         - Modal component
-      3. Create functions to handle data sorting 
-      4. Favorite section
-         - Create a favorite section to store the user's favorite items
-         - Use local storage to persist the data
-         - Create a function (button) to handle adding and removing items from favorites  
-         - Button to clear all favorites
-         - In the Modal component add a button to add the item to favorites list 
+<h1 align="center">🗡️ ZeldaWiki Compendium</h1>
+
+<div align="center">
+     This project is a comprehensive interactive compendium for the Legend of Zelda series, built with React and Tailwind CSS. It allows users to explore various items, weapons, and creatures from the game universe, complete with filtering options and a favorites system.
+</div>
+
+## ⚙️ Tech Stack
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
+
+## 🖥️ Live Demo
+<a href="https://nguyencatnguyen.github.io/ZeldaWIki/" target="_blank">
+  Visit ZeldaWiki Compendium
+</a>
+
+
+## 🌟 Features
+- Modal system for detailed item view
+- Filter with category and search bar
+- Responsive design for mobile and desktop
+- Favorites system with local storage
+
+## 🛠️ Implementation Details
+
+### 🗃️ ZeldaWiki Compendium
+The core component featuring game data from the Zelda universe.
+
+#### API Integration
+- Fetched data from [BotW Compendium API](https://botw-compendium.herokuapp.com/)
+- Implemented React Query for data management:
+  - Automatic caching and background updates
+  - Loading and error states handling
+  - Optimized performance with stale-while-revalidate
+
+#### UI Components
+- **Search & Filter System**:
+  - Dynamic search functionality
+  - Category/type filters
+- **Card Components**:
+  - Responsive grid layout
+  - Interactive hover effects
+- **Modal System**:
+  - Detailed item view
+  - Favorite toggle functionality
+
+#### Favorites System
+- Local storage persistence
+- Add/remove individual items
+- Clear all favorites option
+- Visual indicators for favorited items
+
 
 ### II. 🌸 Tailwind CSS 🌸 
   #### Custom scrollbar area
@@ -101,3 +131,5 @@ function myComponent(){
   )
 }
 ```
+
+
