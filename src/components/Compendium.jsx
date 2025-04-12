@@ -150,7 +150,7 @@ const Compendium = () => {
       { paginatedData.length === 0 && (
         <>
           <p className='text-center sm:text-2xl text-xs mt-15'>404 Results Not Found... Just kidding!  <br/> But really, try another search.</p>
-          <img src="/404.png" alt="" className='mx-auto sm:w-xs w-[150px]' />
+          <img src="./404.png" alt="" className='mx-auto sm:w-xs w-[150px]' />
         </>
         
         )}

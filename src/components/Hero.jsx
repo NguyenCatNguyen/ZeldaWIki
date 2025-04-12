@@ -8,7 +8,7 @@ const Hero = () => {
       <img src="./Hero_1.png" alt="" className='object-contain w-screen h-screen' />
      
     </div>
-  )
+  )  
 }
 
 export default Hero
